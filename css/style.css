@@ -1,0 +1,472 @@
+@font-face {
+    font-family: 'HELVETICAN';
+    src:url(../fonts/HELVETICANEUELIGHT_0.TTF) format('truetype');
+    //src:url(../fonts/OpenSans-Regular.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'UVF';
+    src:url(../fonts/UVFQUATTROCENTO-REGULAR.TTF) format('truetype');
+}
+*{
+    margin:0;
+    padding:0;
+}
+ul,li{
+    list-style:none; 
+}
+a{
+    text-decoration:none; 
+}
+body{
+     font-family: HELVETICAN;
+     font-size:14px;
+     line-height:1.5; 
+}     
+.wrapper{
+    width:1200px;
+    margin:0 auto;
+    background-color:#f2f2f2;
+}
+header{
+    overflow:hidden;
+    background-color:#1f1f26; 
+    padding-top:35px;
+    padding-bottom:50px; 
+  
+}
+.logo{
+    float:left;
+    width:255px;
+    margin-left:85px;
+    margin-right:65px;
+    margin-top:30px;
+}
+.logo img{
+    width:100%;
+}
+/*Menu*/
+.navigator{
+    overflow: hidden;
+}
+.menu-main-menu-container{
+    overflow:hidden; 
+    float: left;
+}
+.menu-main-menu-container li{
+    float:left; 
+    padding-bottom:10px; 
+}
+.menu-main-menu-container li a{
+    display:block;
+    width:112px;
+    height:115px;
+    line-height:170px; 
+    text-align:center;
+    color:#edcc70;
+    border-left:1px solid #96969a; 
+    text-transform:uppercase; 
+    font-size:13px; 
+}
+.menu-main-menu-container li a:hover{
+    text-decoration:none; 
+}
+.menu-main-menu-container li:last-child a{
+    border-right:1px solid #96969a; 
+}
+.menu-main-menu-container li:hover,li.current-menu-item {
+    
+    background:url('../images/hover.png') no-repeat center 107px;
+    background-size:115px 17px;  
+}
+.menu-main-menu-container li a{    
+    background-repeat:no-repeat;    
+    background-position:center 25px;         
+}
+.menu-main-menu-container li.homepage a{
+    background-image:url('../images/icon_home.png');
+    background-size:38px 35px;
+}
+.menu-main-menu-container li.video a{
+    background-image:url('../images/icon_video.png');
+    background-size:31px 35px;
+}
+.menu-main-menu-container li.product a{
+    background-image:url('../images/icon_product.png');
+    background-size:25px 35px;
+}
+.menu-main-menu-container li.contact a{
+    background-image:url('../images/icon_contact.png');
+    background-size:18px 30px;
+}
+.menu-main-menu-container li.develop a{
+    background-image:url('../images/icon_develop.png');
+    background-size:35px 33px;
+}
+
+
+.right-menu {
+    overflow: hidden;
+    float: left;
+    line-height: 115px;
+    margin-left:40px;
+    height: 115px; 
+    
+}
+.right-menu  li {
+    width:40px;
+    height:40px; 
+    float: left;
+    margin:0 15px; 
+}
+.right-menu li img{
+    width: 100%;
+}
+.cart-number .cart{
+    position: relative;
+}
+.c-number{
+    width: 24px;
+    height: 24px;
+    background: url(../images/icon_numberCart.png) no-repeat;
+    background-size: 24px 24px;
+    position: absolute;
+    top: 27%;
+    left: 60%;
+    line-height: 1.5;
+    text-align: center;
+    color: #474748;
+    font-weight: bold;
+    font-size: 15px;
+}
+/*
+* COntent css
+*/
+.content-page{
+    padding:0 60px;
+}
+
+/*CSS Home VIDEO*/
+
+.home-video{
+    overflow:hidden;
+    background-color:#000;
+}
+/*CSS ABOUT US*/
+
+.about-us{
+    width:100%;
+    height:355px;
+    background:url('../images/bg_AboutUs.png') no-repeat; 
+    -moz-background-size:100% 100%;
+    -webkit-background-size:100% 100%;
+    background-size:100% 100%;
+    text-align:center; 
+    color:#fff; 
+    overflow: hidden;
+}
+.top-about-us{
+    text-transform:uppercase;
+    padding: 35px 0;  
+}
+.top-about-us h1{
+    font-size:35px;
+    font-weight:bold; 
+    margin: 0;
+}
+.top-about-us h2{
+    font-size:24px;
+    font-weight: normal;
+    padding-top:5px; 
+    color: #f5f5f5;
+}
+.mid-about-us{
+    font-size:20px;
+    font-family:UVF;
+    font-weight: normal;
+    color: #f1f1f1;
+}
+.bottom-about-us{
+    text-align: center;
+    padding-top: 20px;
+}
+.bottom-about-us a{
+    width:260px;
+    height: 65px;
+    display: block;
+    text-align: center;
+    background-color: #76fa82; 
+    color:#333333;
+    font-size:26px;
+    text-transform: uppercase;
+    line-height: 65px;
+    font-weight: bold;  
+    margin: 0 auto;
+}
+
+
+/*CSS HOME PRODUCT*/
+.home-product{
+    width:100%;
+    height:525px;
+    background-color:#f1d68d; 
+}
+.main-home-product{
+    overflow: hidden;
+    width: 100%;
+}
+.left-home-product{
+    float: left;
+    width: 50%;
+    text-align:center;
+    padding-top:5%; 
+}
+.right-home-product{
+    width: 50%;
+    float: left;
+    color: #33322e;
+    padding-top: 8%;
+}
+.right-home-product li{
+    font-size:24px; 
+    padding:5px 0; 
+}
+.p-left{
+    padding-left:15px; 
+}
+.link-home-product a{
+    width: 213px;
+    height: 64px;
+    display: block;
+    text-align: center;
+    line-height: 64px;
+    background-color: #f73939;
+    border: 1px solid #f57358;
+    color:#fff;
+    font-size:26px;
+    text-transform: uppercase;
+    font-weight: bold;  
+    margin:50px 0 0 85px;
+
+}
+/*CSS SEARCH MORE*/
+.search-more{
+    width:100%;
+    height:235px;
+    background:url('../images/bg_research.png') no-repeat; 
+    -moz-background-size:100% 100%;
+    -webkit-background-size:100% 100%;
+    background-size:100% 100%;
+    text-align: center;
+}
+.search-more h1{
+    font-size:35px;
+    font-weight: normal;
+    color:#fff;  
+    padding-top:35px; 
+    margin:0;
+}
+.search-more a{
+    width: 260px;
+    height: 64px;
+    line-height: 64px;
+    display: block;
+    font-size:26px;
+    color: #333;
+    background-color: #76fa82;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin:0 auto;
+    margin-top:30px;   
+}
+
+/*
+ *  PAGE ABOUT US
+ */
+
+.get-about-us{
+    height:auto;
+    width: 100%;
+    background-color: #f2f2f2;
+ }
+
+.page-wrapper{
+    padding: 0 70px;
+    overflow: hidden;
+}
+.title-au{
+    height: 85px;
+    width: 100%;
+    background-color: #f1d68d;
+    line-height: 85px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #1a1a1a;
+    margin-top: 60px;
+}
+.content-au{
+    width: 100%;
+    overflow: hidden;
+    font-size: 20px;
+    margin-top: 45px;
+    margin-bottom: 60px;
+    line-height: 1.6;
+}
+.left-au{
+    width:47%;
+    float: left; 
+    text-align: justify;
+}
+.right-au{
+    width: 47%;
+    float: right;
+    text-align: justify;
+}
+/*CSS WHY ME*/
+.why-me{
+    height: 690px;
+    width: 100%;
+    background:url('../images/bg_pageAboutUs.png') no-repeat center center;
+    background-size: 100% 100%;
+    font-size:18px; 
+    color:#f2f2f2; 
+    line-height:1.6; 
+}
+
+.top-why{
+    text-align: center;
+    margin:30px 0; 
+}
+.why-me h3{
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    
+}
+.bottom-why{
+    overflow: hidden;
+    width: 100%;
+}
+.left-why{
+    width: 47.5%;
+    float: left;
+    text-align: right;
+    padding-left:20px; 
+}
+.right-why{
+    width: 47.5%;
+    float: right;
+    padding-right:20px; 
+}
+.why-me .box-2{
+    margin-top:45px; 
+}
+/*CSS NEWSLETTER*/
+.newletter{
+    height: 370px;
+    width: 100%;
+    background-color: #f2f2f2;
+}
+.join-with-me{
+    height: 495px;
+    width: 100%;
+     background:url('../images/bg_sentmail.png') no-repeat center center;
+    background-size: 100% 100%;
+}
+/*
+*   Footer CSS
+*/
+footer{
+    width:100%;
+    height:270px;
+    background-color: #1f1f26;
+    overflow: hidden;
+    width: 100%;
+}
+.left-footer{
+    width:50%;
+    float:left;  
+    text-align: center;
+}
+.right-footer{
+    width:50%;
+    float: left; 
+}
+.logo-footer{
+    width: 210px;
+    height: 45px;
+    margin: 0 auto;
+    margin-top: 45px;
+}
+.logo-footer img{
+    width: 100%;
+}
+.social-icon ul {
+    overflow: hidden;
+    margin: 5% 0 3% 36%;
+    text-align: center;
+    width: 100%; 
+}
+.social-icon li {
+    width:62px;
+    height: 62px;
+    float:left; 
+    padding:0 10px; 
+}
+.social-icon img{
+    width:100%; 
+}
+.copyright{
+    color: #3c3c40;
+    font-size: 15px;
+}
+.right-footer ul{
+    margin-top:10%; 
+}
+.right-footer li{
+    padding :10px 0;
+}
+.right-footer a{
+    color: #6c6c70;
+    font-size: 16px;
+
+}
+/*CSS QA*/
+.box-qa{
+ vertical-align: middle;
+ 
+}
+.title-page{
+    width: 675px;
+    height: 100px;
+    line-height: 100px;
+    background-color: #76fa82;
+    color: #333333;
+    text-align:center;
+    font-size: 40px;
+    margin:50px auto; 
+    font-weight:bold; 
+    
+}    
+.title-box-qa{
+    padding: 25px; 
+    color: #f5f5f5;
+    overflow:hidden;
+    background-color:#666; 
+    margin-bottom:10px; 
+    cursor:pointer;
+}
+
+.ack-qa{
+    padding-right:50px;
+    background:url('../images/qa_on.png') no-repeat right center #666;
+    font-size:20px;
+}
+.qa-active .ack-qa{
+    background:url('../images/qa_off.png') no-repeat right center #666;
+}
+.content-box-qa{
+    font-size:18px;
+    padding:40px 0;
+    display:none; 
+}

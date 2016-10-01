@@ -1,0 +1,32 @@
+/*========================REPONSIVE============================*/
+/*=====LG======*/
+@media (min-width:1200px) {
+    
+}
+/*=====MD======*/
+@media (min-width:992px) and (max-width:1199px) {
+    .wrapper{
+        width:992px;
+    }
+}
+/*=====SM======*/
+@media (min-width:768px) and (max-width:991px) {
+    .wrapper{
+        width:768px;
+    }
+    .product li{
+        width:22.5%;
+    }
+    .other-news{
+        padding-left:0;
+        
+    }
+    
+}
+/*=====XS======*/
+@media screen and (max-width:767px) {
+    .wrapper{
+        max-width:98%;
+    }
+    
+}
