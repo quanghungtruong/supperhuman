@@ -1,5 +1,5 @@
 <?php get_header();?>
-        <div class="content">
+        <div class="content-home">
             <section class="home-video">
                 <iframe width="1200" height="658" src="https://www.youtube.com/embed/yUilfr7SMbk" frameborder="0" allowfullscreen></iframe>
             </section>

@@ -14,7 +14,7 @@
 ul,li{
     list-style:none; 
 }
-a{
+a,a:hover{
     text-decoration:none; 
 }
 body{
@@ -26,6 +26,9 @@ body{
     width:1200px;
     margin:0 auto;
     background-color:#f2f2f2;
+}
+.content{
+    padding:0 70px; 
 }
 header{
     overflow:hidden;
@@ -282,7 +285,9 @@ header{
 /*
  *  PAGE ABOUT US
  */
-
+.content-about-us .page-title{
+    border-radius:5px 5px 0 0; 
+}
 .get-about-us{
     height:auto;
     width: 100%;
@@ -311,6 +316,7 @@ header{
     margin-top: 45px;
     margin-bottom: 60px;
     line-height: 1.6;
+    font-family:UVF;
 }
 .left-au{
     width:47%;
@@ -323,6 +329,9 @@ header{
     text-align: justify;
 }
 /*CSS WHY ME*/
+.content-top{
+    font-family: UVF;
+}
 .why-me{
     height: 690px;
     width: 100%;
@@ -361,18 +370,209 @@ header{
 .why-me .box-2{
     margin-top:45px; 
 }
+.content-left,.content-right{
+    font-family:UVF;
+}
 /*CSS NEWSLETTER*/
 .newletter{
     height: 370px;
     width: 100%;
     background-color: #f2f2f2;
 }
+.title-newsltr{
+    height:145px;
+    background-color: #1f1f26;
+    color:#fff;
+    text-transform: uppercase;
+    font-size: 28px;
+    font-weight: bold;
+    text-indent: 30px;
+    line-height: 145px;  
+}
+.newletter input{
+    width: 535px;
+    height: 100px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    text-indent: 15px;
+    float: left;
+}
+#btnNewsletter{
+    width:265px;
+    height:100px;
+    background: url('../images/btnNewsletter.png') no-repeat;  
+    border: none;
+    float: left;
+    margin-left: 80px;
+}
+.content-newslt{
+    width: 880px;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-top: 5%;
+}
+
+/*CSS JOIN ME*/
 .join-with-me{
     height: 495px;
     width: 100%;
-     background:url('../images/bg_sentmail.png') no-repeat center center;
+    background:url('../images/bg_sentmail.png') no-repeat center center;
     background-size: 100% 100%;
+    overflow: hidden;
 }
+.title-join{
+
+    height: 85px;
+    width: 820px;
+    background-color: #f1d68d;
+    line-height: 85px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #1a1a1a;
+    margin:60px auto 40px auto;
+    display: block;
+}
+.content-join{
+    width:80%;
+    margin: 0 auto;
+    color: #eae9e8;
+    font-size: 18px; 
+    font-family:UVF;
+    text-align: center;
+}
+.btnMail{
+    width: 450px;
+    height: 80px;
+    background: url('../images/btnSentMail.png') no-repeat;
+    text-align: center;
+    line-height: 80px;
+    margin:40px auto;
+}
+.btnMail a{
+    display: block;
+    color: #f1f1f1;
+    font-size: 19px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;  
+}  
+
+/*
+ * CSS VIDEO PAGE
+ */
+ .page-video{
+    padding-bottom: 40px;
+ }
+ .content-video{
+    overflow: hidden;
+    padding:0 70px;
+    margin-top: 3%;
+ }
+.title-video{
+    width: 630px;
+    height: 100px;
+    background-color: #76fa82;
+    color: #333333;
+    font-size: 30px;
+    line-height: 100px;
+    text-align: center;
+    margin: 30px auto;
+    font-weight: bold;
+    border-radius:5px 5px 0 0; 
+}
+.box-video{
+    width: 100%;
+    overflow: hidden;
+    margin:5% 0;
+
+}
+.left-video{
+    width: 50%;
+    float: left;
+}
+.right-video{
+    width: 47%;
+    float: left;
+    margin-left:3%;
+    font-size:20px;
+    text-align:justify;
+}
+.title-box{
+    font-weight:bold; 
+    color: #000;
+    margin-bottom: 20px;
+    margin-top:-5px;
+}
+.content-box{
+    color:#070707;
+
+}
+.bottom-video{
+    width: 100%;
+    background:url('../images/line.png') repeat-x; 
+    position: relative;
+    z-index: 11;
+    height: 2px;
+}
+.text-more{
+    width: 425px;
+    height: 40px;
+    background-color: #76fa82;
+    margin:0 auto;
+    font-size:20px;
+    line-height: 40px;
+    text-align: center;
+    position: absolute;
+    top: -20px;
+    left: 33%;
+    cursor: pointer;
+}
+/* CSS PAGE CATEGORY*/
+
+.top-video-list{
+    width: 100%;
+    overflow: hidden;    
+}
+.btnVideo a,.title-cat{
+   
+    height: 100px;
+     background-color: #76fa82;
+    color: #333333;
+    font-size: 30px;
+    line-height: 100px;
+    text-align: center;
+    font-weight: bold;
+    display: block;
+    float: left;
+    border-radius: 5px 5px 0 0;
+}
+.title-cat{
+    width: 80%;
+    float:left;
+    margin-left: 2%; 
+}
+.btnVideo a{
+     width: 18%;
+}
+.title-box a{
+    color: #000;
+}
+
+/*CSS PAGE SAN PHAM*/
+
+.sp-slide{
+    width: 100%;
+    height: 575px;    
+    background-color:#f2f2f2;
+    overflow: hidden;
+    
+}
+.carousel-control.left, .carousel-control.right{
+    background: none;
+    color: #000;
+}
+
 /*
 *   Footer CSS
 */

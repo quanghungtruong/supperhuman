@@ -40,7 +40,6 @@ add_action('wp_enqueue_scripts','add_style_js');
 
 //=========================ADD FUNTION=======================================
 
-//=================GLOBAL FUNCTION=======================
 
 /*
  * Get image by bfi thumb
@@ -108,10 +107,6 @@ function getThePostByTaxonomy($num,$post_type,$taxonomy,$term)
 }
 
 
-/*
- * Lấy game theo từng mục game index và post type
- * 
- **/
 function get_list_category($post_type,$num,$taxonomy,$slug,$post_not_in=null)
 {
     $args=array(
@@ -133,100 +128,6 @@ function get_list_category($post_type,$num,$taxonomy,$slug,$post_not_in=null)
     return $query;
 }
 
-//===========get game offline
-function get_news($num=5)
-{
-    $args=array(
-        'posts_per_page'=>$num,
-        'post_type'=>'post',       
-        'orderby'=>'date',
-        'order'=>'DESC'
-    );
- $query=new WP_Query($args);
- return $query;
-}
-
-function show_first_news()
-{
-    $fist_post=  get_news(1);
-    while ($fist_post->have_posts()):
-        $fist_post->the_post();
-        $image=  get_image_post_to_show(get_the_ID(),458,200,true);        
-    ?>
-        <a class="img-first-news" href="#">
-        <img src="<?php echo $image;?>">
-        </a>
-    <a class="title-news" href="<?php the_permalink();?>"><?php the_title();?></a>
-    <p><?php the_excerpt();?></p>
-
-    <?php
-    endwhile;
-    wp_reset_postdata();
-}
-function show_other_news()
-{
-    $not_post=  get_news(1);
-    $not_id=array(0);
-    
-    foreach ($not_post as $not)
-    {
-      $not_id[]=$not->ID;
-    }
-    
-    $args=array(
-        'posts_per_page'=>8,
-        'post_type'=>'post',
-        'post__not_in'=>$not_id,
-        'orderby'=>'date',
-        'order'=>'DESC'
-    );
-    $other_post=new WP_Query($args);
-    //print_r($not_post);
-    ?>
-    <ul>
-        <?php
-            $i=0;
-            while ($other_post->have_posts()):
-            if($i>=1):                
-                $other_post->the_post();
-                $image=  get_image_post_to_show(get_the_ID(),100,100,true);   
-        ?>
-        <li class="col-lg-6 col-xs-12">
-            <a class="img-other-news" href="#">
-                <img src="<?php echo $image;?>">
-            </a>
-            <div class="content-other-news">
-                <a class="title-news" href="<?php the_permalink();?>"><?php the_title();?></a>                
-            </div>
-        </li>  
-                           
-    </ul>
-        <?php
-           endif;
-        $i++;
-        endwhile;
-        wp_reset_postdata();
-        ?>
-    <?php
-}
-function get_last_news($num)
-{
-    $posts=get_news(5);
-    $not_in=array();                           
-   while ($posts->have_posts()){
-       $posts->the_post();
-       $not_in[]=get_the_ID();       
-   }
-   $args=array(
-       'posts_per_page'=>$num,
-       'post_type'=>'post',
-       'post__not_in'=>$not_in,
-       'order by'=>'date',
-       'order'=>'DESC'
-   );
-   $query=new WP_Query($args);
-   return $query;
-}
 /*
  * Single template 
  **/
@@ -246,7 +147,6 @@ function set_cookie_post($post_id)
     return false;
     
 }
-
 
 
 /*
