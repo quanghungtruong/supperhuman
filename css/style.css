@@ -568,11 +568,124 @@ header{
     overflow: hidden;
     
 }
+.carousel {   
+    height: 70%;
+    margin-top: 9%;
+   
+}
 .carousel-control.left, .carousel-control.right{
     background: none;
     color: #000;
 }
+#carousel-example-generic{
+  
+}
+.carousel-inner > .item > img, .carousel-inner > .item > a > img{
+    width: 100%;
+}
+.carousel-control{
+    width: 5%;
+}
+.carousel-inner {   
+    width: 90%;   
+    margin: 0 auto;
+}
+.sp-page{
+    overflow: hidden;
+    background-color: #f1d68d;
+}
+.sp-title{
+    height: 65px;
+    width: 100%;
+    background-color: #1f1f26;
+    color: #f1f2f4;
+    font-size: 30px;
+    text-align: center;
+    line-height: 65px;   
+    font-weight: bold;
+    margin-top: 65px;
+}
+.sp-content{
+    overflow: hidden;
+    margin-top: 45px;
+}
+.sp-box{
+    width:46.2%;
+    float: left; 
+    margin-right: 80px; 
+}
+.sp-box:last-child{
+    margin-right: 0;
+}
+.sp-image{
+    width: 100%;
+    height:490px;
+    text-align: center;
+    background-color: #fff;
+    vertical-align: middle;
+    line-height: 490px;
+}
+.sp-image a{
+    display: block;
+}
+.sp-image img{
+    max-width:100%;
+    
 
+}
+.sp-detail{
+    width: 100%;
+    height: 75px;
+    line-height: 75px;
+    background-color: #f1f2f4;
+    overflow: hidden;
+    font-size: 20px;
+    color: #83888b;
+    padding:0 20px;
+    margin-top: 10px;
+}
+.sp-name{
+    float: left;
+}
+.sp-price{
+    float: right;
+
+}
+.btnAddCart{
+    width: 100%;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.btnAddCart img{
+    width: 100%;
+}
+.sp-moi .sp-box{
+    width: 32%;
+    margin-right: 20px;
+}
+.sp-moi .sp-image{
+    height: 335px;
+    line-height: 335px;
+}
+.sp-moi .sp-box:last-child{
+    margin-right: 0;
+}
+.sp-moi .btnAddCart{
+    margin-top: 10px;
+}
+.view-cart a{
+    color: #333;
+    font-weight: bold;
+    height: 95px;
+    width: 385px;
+    text-align: center;
+    line-height: 90px;
+    text-transform: uppercase;
+    background-color: #76fa82;
+    font-size: 26px;
+    margin: 50px auto;
+    display: block;
+}
 /*
 *   Footer CSS
 */
