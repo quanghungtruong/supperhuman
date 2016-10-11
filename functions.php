@@ -29,11 +29,12 @@ function  add_style_js()
     wp_enqueue_style('template-css',  get_template_directory_uri().'/css/style.css','',true);
     wp_enqueue_style('camera-css',  get_template_directory_uri().'/css/template.css','',true);
     
+    
    
     wp_enqueue_script('jquery');
     wp_enqueue_script('bootstrap-js',  get_template_directory_uri().'/bootstrap/js/bootstrap.min.js','',true,true);
     wp_enqueue_script('common-js',  get_template_directory_uri().'/js/code.js','',true,true);
-   
+    wp_enqueue_script('jqzoom-js',  get_template_directory_uri().'/js/jquery.elevatezoom.js','',true,true);
     
 }
 add_action('wp_enqueue_scripts','add_style_js');
