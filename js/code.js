@@ -13,6 +13,7 @@ supperHuman.prototype.constructor = function() {
     jQuery('document').ready(function() {
         that.clickIconQA();
         that.ZoomLargeImage();
+        that.FormValidate();
     })
 }
 
@@ -51,5 +52,32 @@ supperHuman.prototype.ZoomLargeImage = function(){
     });  
     // Zoom image  
     jQuery('#zoom').elevateZoom();
+}
+
+/*
+ * Funtion validate form Pay Product
+ */
+supperHuman.prototype.FormValidate = function(){
+  jQuery('#PayForm').validate({
+    rules: {
+        firstname: "required",
+        lastname: "required",  
+        address: "required",      
+        email: {
+          required: true,
+          email: true
+        },
+        phone: "required",
+        city: "required",
+      },
+      messages: {
+        firstname: "Please enter your firstname",
+        lastname: "Please enter your lastname",        
+        email: "Please enter a valid email address",
+        phone: "",
+        city: "",
+        address: ""
+      } 
+  });
 }
 

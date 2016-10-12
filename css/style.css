@@ -950,8 +950,131 @@ header{
     width: 45%;
     float: left;
 }
-
-
+/*CSS HOAN TAT DON HANG*/
+.page-thanh-toan .title-page{
+    width: 100%;
+    text-indent: 20px;
+    text-align: left;
+    border-radius: 5px 5px 0 0;
+    margin-bottom:20px;
+    font-size: 35px; 
+}
+.bg-input{
+    width: 100%;
+    background-color: #fff;
+    height: 70px;
+    margin:10px 0;
+    padding:10px 20px; 
+}
+.bg-input input, .bg-input select{
+    height: 100%;
+    text-indent: 20px;
+    font-size: 1.5em;
+    border:1px solid #a2a2a1;
+}
+.input-1{
+    width:35%; 
+}
+.input-2{
+    width: 60%;
+    margin-right:4.5%; 
+}
+.input-3{
+    width: 100%;
+}
+.ship-way{
+    height:422px;
+    width: 100%;
+    background: url('../images/bgThanhtoan.png') no-repeat;
+    background-size: 100% 100% ;
+    overflow: hidden;
+    margin-top:30px; 
+}
+.ship-way .title-page{
+    margin-top:30px;
+}
+.over-ship{
+    overflow: hidden;
+}
+.left-ship{
+    width: 47%;
+    float: left;
+    margin-right: 6%;
+}
+.right-ship{
+    width: 47%;
+    float: left;
+}
+.top-ship{
+    height: 70px;
+    width: 100%;
+    text-align: center;
+    color: #333;
+    font-size: 20px; 
+    font-weight: bold;
+    line-height: 70px;
+    background-color: #fff;
+    margin-bottom: 30px;
+}
+.ship-option{
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+.ship-option label{
+    display: block;
+    text-indent: 20px;
+    font-size: 16px;
+}
+.left-ship input{
+    visibility: hidden;
+}
+.another{
+    width: 100%;
+    padding:15px 20px;
+    background-color: #fff;
+    font-size:17px;
+    text-align: justify; 
+}
+.cart-info{
+    background-color: #fff;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    font-size: 18px;
+    padding-top:10px;
+    padding-bottom: 10px; 
+}
+.page-thanh-toan .main-btn-cart{
+    width: 40%;
+}
+.page-thanh-toan .main-btn-cart .top-btn{
+    height: 65px;
+    line-height: 65px;
+}
+.page-thanh-toan{
+    margin-bottom: 40px;
+}
+.page-thanh-toan .bottom-btn button{
+    background: none;
+    border: none;
+    width: 100%;
+}
+button:visited{
+    border:none;
+}
+.cart-info-box .title-page{
+    width: 40%;
+    margin-left: 0;
+}
+label.error{
+    display: none !important;
+}
+input.error{
+    border-color: red; 
+}
 /*
 *   Footer CSS
 */
