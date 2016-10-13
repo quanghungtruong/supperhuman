@@ -14,6 +14,7 @@ supperHuman.prototype.constructor = function() {
         that.clickIconQA();
         that.ZoomLargeImage();
         that.FormValidate();
+        that.SelectShip();
     })
 }
 
@@ -81,3 +82,14 @@ supperHuman.prototype.FormValidate = function(){
   });
 }
 
+/*
+ * Function handle event click select ship
+ */
+supperHuman.prototype.SelectShip =  function(){
+  jQuery('.selectShip').on('click', function(){
+    jQuery('.shipActive').removeClass('shipActive');
+    if(jQuery(this).hasClass('shipActive') != true) {
+      jQuery(this).addClass('shipActive');
+    }
+  });  
+}

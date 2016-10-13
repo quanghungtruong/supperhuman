@@ -1027,8 +1027,9 @@ header{
     display: block;
     text-indent: 20px;
     font-size: 16px;
+    cursor: pointer;
 }
-.left-ship input{
+.left-ship input, #ship_3{
     visibility: hidden;
 }
 .another{
@@ -1074,6 +1075,132 @@ label.error{
 }
 input.error{
     border-color: red; 
+}
+.shipActive{
+    background-color:#787d81;
+    color:#fff; 
+}
+.top-ship label{
+    display:block;
+    cursor: pointer;
+}
+
+/*CSS PAGE DAT HANG THANH CONG*/
+.page-tc .title-page{
+    width: 100%;
+    text-align: left;
+    text-indent: 20px;
+    margin-bottom: 20px;
+    border-radius:5px 5px 0 0; 
+}
+
+.box-tc{
+    background-color: #fff;
+    padding:25px;
+    width: 100%;
+    margin-bottom:20px; 
+    font-size:18px;
+}
+.box-tc.box-cartInfo{
+    padding: 0;
+}
+.box-first{
+    text-align: center;
+}
+.box-first h5{
+    font-size:24px; 
+    text-transform: uppercase;
+}
+.box-first a{
+    color: #52ab59;
+    text-decoration: underline;
+}
+.tc-2{
+    font-weight: bold;
+}
+.tc-2 span{
+    margin-left: 5%;
+    font-weight: normal;
+}
+
+.page-tc  .main-btn-cart .top-btn {
+    height: 70px;
+    border-radius: 0;
+    line-height: 70px;
+    margin: 0 0 20px 0;    
+}
+
+/*CSS PAGE CONTACT*/
+.page-contact{
+    margin-bottom: 20px;
+}
+.top-contact{
+    padding:60px;
+    font-size: 26px;
+    text-align: center; 
+}
+.contact-form{
+    background-color: #edcc70;
+    overflow: hidden;   
+    padding:70px; 
+}
+.contact-form .title-page{
+    width:35%;
+    margin:0;
+    margin:0 0 20px 0;
+    text-align: left;
+    font-size: 30px;
+    text-indent: 20px
+}
+.contact-form .input-1{
+    width:30.4%;
+    margin-right:4%;  
+}
+.contact-form .input-1:last-child{
+    margin-right: 0;
+}
+.bg-text{
+    width: 100%;
+    padding:10px 20px;
+    display: block;
+    overflow: hidden;
+    background-color: #fff;
+}
+.bg-text textarea{
+    width: 100%;
+    height:20%; 
+    padding: 20px;
+}
+.btnContact{
+    text-align: right;
+    width: 100%;
+    margin-top:20px; 
+
+}
+.btnContact input{
+    background: url('../images/btnContact.jpg') no-repeat;
+    width: 200px;
+    height: 90px;
+    background-size: 100%;
+    border: none;
+    text-indent: 99999;
+
+}
+.bottom-contact ul{
+    width: 100%;
+    overflow: hidden;
+
+}
+.bottom-contact ul li a{
+    font-size: 20px;
+    color: #000;
+    font-weight: bold;
+    display: block;
+    margin-bottom:20px; 
+    margin-left: 10%;
+}
+.bottom-contact ul li a span{
+    margin-left: 8%;
 }
 /*
 *   Footer CSS

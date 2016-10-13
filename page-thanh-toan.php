@@ -45,20 +45,24 @@
 				<div class="title-page">Hình thức nhận hàng</div>
 				<div class="over-ship">
 					<div class="left-ship">
-						<div class="top-ship">Bạn ở nội thành phố TP.HCM</div>
-						<div class="ship-option">
+						<div class="top-ship selectShip">Bạn ở nội thành phố TP.HCM</div>
+						<div class="ship-option selectShip">
 							<label for="ship_1">Nhận hàng tại nhà (1-4 ngày, phí vận chuyển 20.000 vnđ)</label>
 							<input type="radio" name="ship" value="1" id="ship_1" class="ship-radio-option">
 						</div>
 						
-						<div class="ship-option">
+						<div class="ship-option selectShip">
 							<label for="ship_2">Nhận hàng tại nhà nhanh(1-2 ngày, phí vận chuyển 30.000 vnđ)</label>
 							<input type="radio" name="ship" value="2" id="ship_2" class="ship-radio-option">
 						</div>
 						
 					</div>
 					<div class="right-ship">
-						<div class="top-ship">Bạn ở các vùng khác</div>
+						<div class="top-ship selectShip">
+							<label for="ship_3">Bạn ở các vùng khác</label>
+							<input type="radio" name="ship" value="0" id="ship_3" class="ship-radio-option">
+						</div>
+						
 						<div class="another">
 							Quý khách vui lòng nhấn nút HOÀN TẤT ở phía dưới (để chúng tôi nhận được thông tin đơn hàng quý khách cần mua), sau đó sẽ có nhân viên bên chúng tôi gọi điện để tư vấn cho quý khách về phương thức nhận hàng cũng như thanh toán.
 						</div>
@@ -81,20 +85,20 @@
 		</div>
 		<div class="content">
 			<div class="btnLocation">
-		<div class="main-btn-cart">
-			<div class="top-btn">
-				<span class="left-btn">Tổng cộng : </span>
-				<span class="right-btn">370 000 VNĐ</span>
+				<div class="main-btn-cart">
+					<div class="top-btn">
+						<span class="left-btn">Tổng cộng : </span>
+						<span class="right-btn">370 000 VNĐ</span>
+					</div>
+					<div class="bottom-btn">
+						<button type="submit">
+							<img src="<?php bloginfo('stylesheet_directory')?>/images/btnShip.png"/>
+						</button>
+							
+						
+					</div>
+				</div>
 			</div>
-			<div class="bottom-btn">
-				<button type="submit">
-					<img src="<?php bloginfo('stylesheet_directory')?>/images/btnShip.png"/>
-				</button>
-					
-				
-			</div>
-		</div>
-	</div>
 		</div>
 	</form>
 </div>
