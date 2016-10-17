@@ -1,7 +1,19 @@
 <?php get_header();?>
         <div class="content-home">
             <section class="home-video">
-                <iframe width="1200" height="658" src="https://www.youtube.com/embed/yUilfr7SMbk" frameborder="0" allowfullscreen></iframe>
+                <?php
+                    $videoPost = getThePostByTaxonomy(1, 'video', 'video_option', 'show-homepage');
+                    while ($videoPost->have_posts()){
+                        $videoPost->the_post();
+                        $getVideoHome = get_post_meta(get_the_ID(), 'link_video', true);                    
+                        $homeVideo = str_replace('https://youtu.be', 'https://www.youtube.com/embed/', $getVideoHome);
+                        ?>
+                <iframe  src="<?php echo $homeVideo?>" frameborder="0" allowfullscreen></iframe>
+                <?php
+                    }
+                    wp_reset_postdata();
+                ?>
+                
             </section>
            
             <section class="about-us">
@@ -12,7 +24,7 @@
                     <p>Chúng tôi luôn cố gắng mở rộng và hỗ trợ một cách miễn phí. Qua những gì chúng tôi cung cấp quý vị sẽ nhận thấy<br> được khả năng của bản thân</p>
                 </div>
                 <div class="bottom-about-us">
-                    <a href="<?php home_url('/about-us')?>">Về chúng tôi</a>
+                    <a href="<?php echo home_url('/ve-chung-toi')?>">Về chúng tôi</a>
                 </div>
             </section> 
             <section class="home-product">
@@ -36,7 +48,7 @@
             <section class="search-more">
                 <h1>Chưa biết cách sử dụng ?</h1>
                  <div class="button-search">
-                    <a href="<?php home_url('/about-us')?>">Tìm hiểu thêm</a>
+                    <a href="<?php echo home_url('/phat-trien')?>">Tìm hiểu thêm</a>
                 </div>
             </section>
         </div>

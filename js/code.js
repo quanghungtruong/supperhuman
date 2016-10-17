@@ -15,6 +15,10 @@ supperHuman.prototype.constructor = function() {
         that.ZoomLargeImage();
         that.FormValidate();
         that.SelectShip();
+        that.MenuCatEvent();
+        that.LoginEvent();
+        that.MenuMobile();
+
     })
 }
 
@@ -70,6 +74,8 @@ supperHuman.prototype.FormValidate = function(){
         },
         phone: "required",
         city: "required",
+        password:"required",
+        confirmPass:"required",
       },
       messages: {
         firstname: "Please enter your firstname",
@@ -77,7 +83,38 @@ supperHuman.prototype.FormValidate = function(){
         email: "Please enter a valid email address",
         phone: "",
         city: "",
-        address: ""
+        address: "",
+        password:"required",
+        confirmPass:"required",
+      } 
+  });
+  jQuery('#registryForm').validate({
+    rules: {            
+        email: {
+          required: true,
+          email: true
+        },       
+        password:"required",
+        confirmPass:"required",
+      },
+      messages: {       
+        email: "Please enter a valid email address",       
+        password:"required",
+        confirmPass:"required",
+      } 
+  });
+  jQuery('#loginForm').validate({
+    rules: {            
+        email: {
+          required: true,
+          email: true
+        },       
+        password:"required",        
+      },
+      messages: {       
+        email: "Please enter a valid email address",       
+        password:"required",
+       
       } 
   });
 }
@@ -92,4 +129,57 @@ supperHuman.prototype.SelectShip =  function(){
       jQuery(this).addClass('shipActive');
     }
   });  
+}
+
+/*
+ * Function handle event hover menu category
+ */
+supperHuman.prototype.MenuCatEvent = function(){
+ // Remove parent category link tag a
+ jQuery('.left-category ul li').parents('ul').prev('a').attr('href','javascript:void(0)');
+ // Handle click event
+ jQuery('.left-category ul>li>a').on('click', function(){  
+    jQuery('.catActive ul').slideUp('normal');
+    jQuery('.catActive').removeClass('catActive');
+
+    if(jQuery(this).parents('li').hasClass('catActive') != true) {
+      jQuery(this).parents('li').addClass('catActive');
+      jQuery('.catActive ul').slideDown('normal');
+    }
+
+ });
+} 
+
+/*
+ * Funtion handle JS Login page
+ * Handle Tab
+ */
+supperHuman.prototype.LoginEvent =  function(){
+  jQuery('.btnLogin').on('click', function(){
+    jQuery('.loginActive').removeClass('loginActive');
+    jQuery(this).addClass('loginActive');
+    jQuery('.registry-form').css('display','none');
+    jQuery('.login-form').css('display','block');
+  });
+  jQuery('.btnRegistry').on('click', function(){
+    jQuery('.loginActive').removeClass('loginActive');
+    jQuery(this).addClass('loginActive');
+    jQuery('.registry-form').css('display','block');
+    jQuery('.login-form').css('display','none');
+  });
+}
+
+/*
+ * Function handle Menu on mobile
+ */
+supperHuman.prototype.MenuMobile = function(){
+  jQuery('.mobile-nav').on('click', function(){
+    if(jQuery(this).hasClass('mobile-active') !=true) {
+      jQuery(this).addClass('mobile-active');
+      jQuery('.mobile-menu').slideDown('normal');
+    } else {
+      jQuery(this).removeClass('mobile-active');
+      jQuery('.mobile-menu').slideUp('normal');
+    }
+  });
 }

@@ -26,7 +26,188 @@
 /*=====XS======*/
 @media screen and (max-width:767px) {
     .wrapper{
-        max-width:98%;
+        max-width:100%;
     }
-    
+    section.header{
+         position: relative;
+    }
+    header{
+        overflow: hidden;
+        padding: 20px;
+        border-bottom: 1px solid #dbdbdc;
+        width: 100%;
+    }
+    .mobile-nav{
+        width:10%;
+        float: left; 
+        margin-right: 15px;
+
+    }
+    .mobile-nav span{
+        font-size: 30px;
+        color: #fff;        
+    }
+    .logo{
+        width: 50%;
+        float: left;
+        margin:0;
+        margin-right: 20px;
+    }
+    .logo img{
+        width: 100%;
+    }
+    .navigator{
+        width: 30%;
+        float: left; 
+        overflow: hidden;
+    }
+    .navigator .right-menu{
+        width:100%;
+        overflow: hidden;
+        margin:0;
+        padding: 0;
+    }
+    .navigator .right-menu li{
+        float: left;
+        width: 35px;
+        height: 35px;
+        margin: 0;
+
+    }
+    .navigator .right-menu li img{
+        width: 100%;
+    }
+   .navigator .right-menu li.login{
+        margin-right:15px;
+   }
+   .mobile-menu{
+    width: 50%;
+    position: absolute;
+    z-index: 999;
+    top:100%;
+    left: 0; 
+    background-color: #1f1f26;
+    overflow: hidden;
+    display: none;
+   }
+   .menu-main-menu-container{
+    width: 100%;
+    border-right:1px solid #dbdbdc;
+    border-bottom:1px solid #dbdbdc;
+   }
+   .mobile-menu #menu-main-menu{
+        width:100%;        
+        overflow: hidden; 
+   }
+   .mobile-menu #menu-main-menu li{
+        clear: both;
+        padding-bottom: 0;
+   }
+   .mobile-menu .menu-main-menu-container li a{
+        width: 100%;
+        height: auto;
+        line-height: 1.6;
+        background-position: 20px center;
+        padding: 25px 0 20px 70px;
+        background-size: 25px 23px;
+        display: block;
+        border:none;
+   }
+   .home-video iframe{
+        height: 250px;
+   }
+   .top-about-us{
+        padding:20px 0; 
+   }
+   .top-about-us h1{
+        font-size: 30px;
+   }
+   .top-about-us h2{
+        font-size: 20px;
+        padding-top: 0;
+   }
+   .mid-about-us{
+        padding:0 10px;
+        font-size: 18px;
+   }
+   .bottom-about-us a, .search-more a{
+        width: 55%;
+        height: auto;
+        padding: 10px 0;
+        font-size: 22px;
+        line-height: 1.5;
+   }
+   .left-home-product img{
+        width: 100%;
+   }
+   .p-left{
+        padding-left: 10px;
+   }
+   .right-home-product li{
+        font-size: 15px;
+        padding:0 5px 0 0;
+   }
+   .left-home-product{
+        padding: 20px;
+        padding-top: 10%;
+   }
+   .right-home-product{
+        padding-right:5px;
+   }
+   .link-home-product a{
+        width: 80%;
+        height: auto;
+        line-height: 1.5;
+        padding: 10px 0;
+        font-size: 20px;
+        margin:20px 0 0 0; 
+   }
+   .search-more h1{
+        font-size: 28px;
+   }
+   .logo-footer{
+        width: 100%;
+        padding: 0 10px;
+        margin-top: 25px;
+   }
+   .logo-footer img{
+        width: 100%;
+   }
+   .right-footer li{
+        padding: 5px 0;
+   }
+   .right-footer a{
+        font-size: 14px;
+   }
+   .right-footer{
+        padding-right:15px;
+        text-align: right;
+   }
+   .social-icon ul{
+        margin:5% 0 3% 15%;
+   }
+   /*CSS VIDEO PAGE*/
+   .content-video{
+        padding: 0 10px;
+   }
+   .title-video{
+        width: 85%;
+   }
+   .left-video{
+        width: 100%;
+   }
+   .left-video iframe {
+        width: 100%;
+        height: 250px;
+    }
+    .right-video{
+        width: 100%;
+        margin-top: 3%;
+        margin-left: 0;
+    }
+    .text-more{
+        width: 75%;
+        font-size: 18px;
+        left: 13%;
+    }
 }

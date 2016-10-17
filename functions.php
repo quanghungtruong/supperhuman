@@ -56,8 +56,6 @@ function get_image($url,$width,$height,$crop=false)
     }
     return false;  
 }
-
-
 //===Get image in post news
 function get_first_image($post_id) {
     $post = get_post($post_id);
@@ -79,8 +77,7 @@ function getThePost($num=3,$post_type,$otherby='date',$order='DESC')
         'posts_per_page'=>$num,
         'post_type'=>$post_type,        
         'orderby'=>$otherby,
-        'order'=>$order
-        
+        'order'=>$order        
     );
     $query=new WP_Query($args);
     return $query;
@@ -104,63 +101,22 @@ function getThePostByTaxonomy($num,$post_type,$taxonomy,$term)
         'orderby'=>'date',
         'order'=>'DESC'
     );
-    $query=new WP_Query($args);
+    $query = new WP_Query($args);
     return $query;
 }
 
-
-function get_list_category($post_type,$num,$taxonomy,$slug,$post_not_in=null)
+/*
+ * Get post by category
+ */
+function getPostByCategory($num, $post_type, $cat, $orderby = 'date', $order = 'DESC')
 {
-    $args=array(
-        'posts_per_page'=>$num,
-        'post_type'=>$post_type,        
-        'post__not_in'=>array($post_not_in),
-        'order by'=>'ID',
-        'order'=>'DESC',
-        'tax_query'=>array(
-            array(
-                'taxonomy'=>$taxonomy,
-                'terms'=>$slug,
-                'field'=>'slug'
-            )
-        )
-        
+    $args = array(
+        'posts_per_page' => $num,
+        'post_type' => $post_type,
+        'category_name' => $cat,
+        'orderby' => $orderby,
+        'order' => $order
     );
-    $query=new WP_Query($args);
+    $query = new WP_Query($args);
     return $query;
 }
-
-/*
- * Single template 
- **/
-
-function set_cookie_post($post_id)
-{
-    if($_COOKIE['view_game']){
-        $view=  unserialize($_COOKIE['view_game']);
-    }    
-    if(!in_array($post_id,$view))
-    {
-        $view[]=$post_id;
-        ob_start();            
-        setcookie('view_game',serialize($view),  time()+3600*24*30);  
-        return true;
-    }
-    return false;
-    
-}
-
-
-/*
- * Ham bo width va height
- **/
-function remove_size_image_content($content)
-{
-    if(is_single())
-    {
-        $partern='/(width=|height=)/';
-        $rep='';
-        return preg_replace($partern,$rep,$content);
-    }
-}
-//add_filter('the_content','remove_size_image_content');

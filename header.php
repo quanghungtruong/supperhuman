@@ -11,19 +11,32 @@
     <div class="wrapper">
         <section class="header">
             <header>
+                <div class="mobile-nav visible-xs">
+                    <span class="glyphicon glyphicon-align-justify"></span>
+                </div>
+                <div class="mobile-menu">
+                    <?php
+                            $args=array(
+                                'menu'=>'Main menu'
+                            );
+                            wp_nav_menu($args);
+                    ?>
+                </div>
                 <div class="logo">
                     <a href="<?php echo home_url()?>">
                     <img src="<?php bloginfo('stylesheet_directory')?>/images/logo.png">
                     </a>
                 </div>
                 <div class="navigator">
-                    <?php
-                        $args=array(
-                            'menu'=>'Main menu'
-                        );
-                        wp_nav_menu($args);
-                        
-                    ?>
+                    <div class="desk-menu visible-lg">
+                        <?php
+                            $args=array(
+                                'menu'=>'Main menu'
+                            );
+                            wp_nav_menu($args);
+                            
+                        ?>
+                    </div>
                     <ul class="right-menu">
                         <li class="login">
                             <a href="">
