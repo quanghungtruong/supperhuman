@@ -37,8 +37,8 @@
         </footer>
         <?php wp_footer();?>
         <script type="text/javascript">
-            var supperHuman = new supperHuman();
-            supperHuman.constructor();
+            var superHuman = new superHuman();
+            superHuman.constructor();
         </script>
     </div>
 </body>

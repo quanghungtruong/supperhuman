@@ -8,14 +8,13 @@
                         $getVideoHome = get_post_meta(get_the_ID(), 'link_video', true);                    
                         $homeVideo = str_replace('https://youtu.be', 'https://www.youtube.com/embed/', $getVideoHome);
                         ?>
-                <iframe  src="<?php echo $homeVideo?>" frameborder="0" allowfullscreen></iframe>
+                <iframe class="video-iframe" src="<?php echo $homeVideo?>" frameborder="0" allowfullscreen></iframe>
                 <?php
                     }
                     wp_reset_postdata();
                 ?>
                 
-            </section>
-           
+            </section>           
             <section class="about-us">
                 <div class="top-about-us">
                     <h1>Chào mừng bạn</h1><h2>đến với chúng tôi</h2> 

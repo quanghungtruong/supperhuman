@@ -3,13 +3,14 @@
  * Handle jquery of site
  */
 
-var supperHuman = function() {};
+var superHuman = function() {};
 
 /*
  * Funtion constructor
  */ 
-supperHuman.prototype.constructor = function() {
-    var that=this;
+superHuman.prototype.constructor = function() {
+    var that = this;
+    var ajaxSite = new ajax();
     jQuery('document').ready(function() {
         that.clickIconQA();
         that.ZoomLargeImage();
@@ -17,8 +18,9 @@ supperHuman.prototype.constructor = function() {
         that.SelectShip();
         that.MenuCatEvent();
         that.LoginEvent();
-        that.MenuMobile();
-
+        that.MenuMobile(); 
+        that.BtnUpDown();
+        ajaxSite.ajaxInit();
     })
 }
 
@@ -26,7 +28,7 @@ supperHuman.prototype.constructor = function() {
  * Funtion handle QA Icon
  * Slide Down or Up content when this title clicked.
  */ 
-supperHuman.prototype.clickIconQA = function(){
+superHuman.prototype.clickIconQA = function(){
     // Default on load page
     jQuery('.box-qa').first().addClass('qa-active');
     jQuery('.qa-active .content-box-qa').slideDown('slow');    
@@ -46,7 +48,7 @@ supperHuman.prototype.clickIconQA = function(){
  * Funtion handle single image product
  * Zoom lager image 
  */
-supperHuman.prototype.ZoomLargeImage = function(){
+superHuman.prototype.ZoomLargeImage = function(){
     
     // change image after choose 
     jQuery('.main-thumb').on('click', function(){
@@ -62,7 +64,7 @@ supperHuman.prototype.ZoomLargeImage = function(){
 /*
  * Funtion validate form Pay Product
  */
-supperHuman.prototype.FormValidate = function(){
+superHuman.prototype.FormValidate = function(){
   jQuery('#PayForm').validate({
     rules: {
         firstname: "required",
@@ -122,7 +124,7 @@ supperHuman.prototype.FormValidate = function(){
 /*
  * Function handle event click select ship
  */
-supperHuman.prototype.SelectShip =  function(){
+superHuman.prototype.SelectShip =  function(){
   jQuery('.selectShip').on('click', function(){
     jQuery('.shipActive').removeClass('shipActive');
     if(jQuery(this).hasClass('shipActive') != true) {
@@ -134,7 +136,7 @@ supperHuman.prototype.SelectShip =  function(){
 /*
  * Function handle event hover menu category
  */
-supperHuman.prototype.MenuCatEvent = function(){
+superHuman.prototype.MenuCatEvent = function(){
  // Remove parent category link tag a
  jQuery('.left-category ul li').parents('ul').prev('a').attr('href','javascript:void(0)');
  // Handle click event
@@ -154,7 +156,7 @@ supperHuman.prototype.MenuCatEvent = function(){
  * Funtion handle JS Login page
  * Handle Tab
  */
-supperHuman.prototype.LoginEvent =  function(){
+superHuman.prototype.LoginEvent =  function(){
   jQuery('.btnLogin').on('click', function(){
     jQuery('.loginActive').removeClass('loginActive');
     jQuery(this).addClass('loginActive');
@@ -172,7 +174,7 @@ supperHuman.prototype.LoginEvent =  function(){
 /*
  * Function handle Menu on mobile
  */
-supperHuman.prototype.MenuMobile = function(){
+superHuman.prototype.MenuMobile = function(){
   jQuery('.mobile-nav').on('click', function(){
     if(jQuery(this).hasClass('mobile-active') !=true) {
       jQuery(this).addClass('mobile-active');
@@ -182,4 +184,56 @@ supperHuman.prototype.MenuMobile = function(){
       jQuery('.mobile-menu').slideUp('normal');
     }
   });
+}
+
+/*
+ * Handle add more product on list cart page
+ */
+superHuman.prototype.BtnUpDown = function() {
+     
+    jQuery('.content-cart .btn-up').on('click', function(){
+        var upParent = jQuery(this).parents('.col-2');
+        var number = jQuery(this).prev().html();
+        jQuery(this).prev().html(parseInt(number)+1);
+        //
+        var currentPrice = upParent.children('.gia_sp').val();
+        var curNumber = jQuery(this).prev().html();    
+        var getPrice = currentPrice*(parseInt(curNumber));
+        upParent.next().children('.gia_sp_cart').html(getPrice.toLocaleString());        
+        //
+        var curSum = jQuery('.count-sp').val();  
+        var sumPrice =0;
+        for(var i=1; i<=curSum; i++) {
+           var listPrice = jQuery('#sp_cart_'+i).html();          
+           sumPrice += parseInt(listPrice.split('.').join(''));
+        }
+        jQuery('.tong-gia').html(sumPrice.toLocaleString());
+        //          
+        upParent.children('.num-product').val(curNumber);
+        
+    });    
+    // 
+    jQuery('.content-cart .btn-down').on('click', function(){        
+        var number = jQuery(this).next().html();
+        var upParent = jQuery(this).parents('.col-2');
+        if(parseInt(number) > 1) {
+            jQuery(this).next().html(parseInt(number)-1);
+            //
+            var currentPrice = upParent.children('.gia_sp').val();
+            var curNumber = jQuery(this).next().html();    
+            var getPrice = currentPrice*(parseInt(curNumber));
+            upParent.next().children('.gia_sp_cart').html(getPrice.toLocaleString());
+            //
+            var curSum = jQuery('.count-sp').val();  
+            var sumPrice =0;
+            for(var i=1; i<=curSum; i++) {
+               var listPrice = jQuery('#sp_cart_'+i).html();          
+               sumPrice += parseInt(listPrice.split('.').join(''));
+            }
+            jQuery('.tong-gia').html(sumPrice.toLocaleString());
+            //          
+            upParent.children('.num-product').val(curNumber);
+        }        
+    });
+       
 }

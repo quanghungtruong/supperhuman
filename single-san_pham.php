@@ -1,59 +1,78 @@
 <?php get_header() ?>
 <div class="content">
-	<div class="title-name-sp">
-		Bàn tính gỗ siêu cứng
-	</div>
-	<div class="main-sp">
-		<div class="left-image">	
-			<div class="thumb-image">
-				<?php
-					for($i=0;$i<4;$i++):
-				?>
-				<div class="main-thumb">
-					<img src="<?php bloginfo('stylesheet_directory')?>/images/test_thumb.png"/>
-				</div>
-				<?php
-					endfor;
-				?>
-				<div class="main-thumb">
-					<img  src="<?php bloginfo('stylesheet_directory')?>/images/image3.png"/>
-				</div>
-			</div>
-			<div class="main-image">
-			<img id="zoom" src="<?php bloginfo('stylesheet_directory')?>/images/test_thumb.png" />
-			</div>
-		</div>
-		<div class="right-detail">
-			<div class="content-sp-detail">
-				<div><span>Kích thước (D x R x C): </span>32x11x3.8 cm (gồm 15 cột)</div>
-				<div><span>Xuất xứ:</span> Việt Nam</div> 
-				<div><span>Bảo hành:</span> 12 tháng</div>
-				<div><span>Trọng lượng:</span></div>  
-				<div class="content-detail">
-					Ưu điểm:<br>
-						- Vật liệu bao phủ có xuất xứ từ Việt Nam, có thể chống chịu mài mòn tốt, chịu được sức nóng và ánh sáng mặt trời bình thường liên tục 3 năm.<br>
-						- Có thể tháo lấp lại các thanh phía trong bàn tính.<br>
-						- Khung chịu được lực tác động tương đối tốt.<br>
-					Nhươc điểm:<br>
-						- Chất liệu làm cho sản phẩm có trọng lượng tương đối nặng.<br>
-						- Khung trông khá thô.<br>
-				</div>	
+    <?php
+    while (have_posts()):
+        the_post();
+        $kich_thuoc = get_post_meta(get_the_ID(), 'kich_thuoc', true);
+        $xuat_xu = get_post_meta(get_the_ID(), 'xuat_xu', true);
+        $trong_luong = get_post_meta(get_the_ID(), 'trong_luong', true);
+        $bao_hanh = get_post_meta(get_the_ID(), 'bao_hanh', true);
+        $uu_diem = get_post_meta(get_the_ID(), 'uu_diem', true);
+        $nhuoc_diem = get_post_meta(get_the_ID(), 'nhuoc_diem', true);
+        $price = get_post_meta(get_the_ID(), 'gia', true);
+        $images = array();
+        for ($i = 1; $i < 5; $i++) {
+            $hinh = get_post_meta(get_the_ID(), 'hinh_' . $i, true);
+            if (!empty($hinh)) {
+                $images[] = $hinh['guid'];
+            }
+        }
+        ?>    
+        <div class="title-name-sp">
+            <?php the_title();?>
+        </div>
+        <div class="main-sp">
+            <div class="left-image">	
+                <div class="thumb-image">
+                    <?php
+                        foreach ($images as $img):
+                        ?>
+                        <div class="main-thumb">
+                            <img src="<?php echo $img?>"/>
+                        </div>
+                        <?php
+                    endforeach;
+                    ?>
+                    
+                </div>
+                <div class="main-image">
+                    <img id="zoom" src="<?php echo $images[0];?>" />
+                </div>
+            </div>
+            <div class="right-detail">
+                <div class="content-sp-detail">
+                    <div><span>Kích thước (D x R x C): </span><?php echo $kich_thuoc;?></div>
+                    <div><span>Xuất xứ:</span> <?php echo $xuat_xu;?></div> 
+                    <div><span>Bảo hành:</span> <?php echo $bao_hanh;?></div>
+                    <div><span>Trọng lượng:</span> <?php echo $trong_luong;?></div>  
+                    <div class="content-detail">
+                        Ưu điểm:<br>
+                        <?php echo $uu_diem;?>
+                        Nhươc điểm:<br>
+                        <?php echo $nhuoc_diem;?>
+                    </div>
+                    <div class="content-sp-m"><?php the_content();?></div>
 
-			</div>
-			<div class="price-sp-detail">15 000 VND</div>
-		</div>
-		<div class="clear"></div>
-		<div class="bottom-detail">
-			<div class="btnIntroduce">
-				<a href="#"><img src="<?php bloginfo('stylesheet_directory')?>/images/btnIntroduce.png" /></a>
-			</div>
-			<div class="btnAddCartDetail">
-				<a href="#"><img src="<?php bloginfo('stylesheet_directory')?>/images/btnAddCartDetail.png" /></a>
-			</div>
-		</div>
-		<div class="btnViewCart">
-			<a href="">Xem giỏ hàng</a>
-		</div>
-	</div>
+                </div>
+                <div class="price-sp-detail"><?php echo number_format($price)?> VNĐ</div>
+            </div>
+            <div class="clear"></div>
+            <div class="bottom-detail">
+                <div class="btnIntroduce">
+                    <a href="#"><img src="<?php bloginfo('stylesheet_directory') ?>/images/btnIntroduce.png" /></a>
+                </div>
+                <div class="btnAddCartDetail btnAddCart" id="sp_<?php the_ID();?>">
+                    <img src="<?php bloginfo('stylesheet_directory') ?>/images/btnAddCartDetail.png" />
+                </div>
+            </div>
+            <div class="btnViewCart">
+                <a href="<?php echo home_url('/gio-hang')?>">Xem giỏ hàng</a>
+            </div>
+        </div>
+        <?php
+    endwhile;
+    wp_reset_postdata();
+    ?>
 </div>
-<?php get_footer()?>
+<?php
+get_footer()?>

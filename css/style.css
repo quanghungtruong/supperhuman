@@ -159,9 +159,9 @@ header{
     background-color:#000;
 
 }
-.home-video iframe{
-    width: 100%;
-    height: 658px;
+.video-iframe{
+   width: 100%;
+    height: 600px; 
 }
 /*CSS ABOUT US*/
 
@@ -542,6 +542,37 @@ header{
     left: 33%;
     cursor: pointer;
 }
+
+/*CSS SINGLE VIDEO*/
+.single-video{
+    padding-bottom:10% 
+}
+.top-video-list{
+    margin:20px 0;
+}
+.single-video .title-cat{
+    width:40%;
+}
+.single-video .title-cat a{     
+    display:block;
+    color:#333;
+}
+.detail-video{
+    margin-top:20px;
+    padding:10px;
+    border-top:2px solid #ccc;
+}
+.single-video .title-box{
+    font-size:18px;
+    margin-bottom:10px;
+}
+.single-video .content-detail{
+    font-size:16px;
+}
+.page-video .box-paginator{
+    width:32%;
+    margin:0 auto;
+}
 /* CSS PAGE CATEGORY*/
 
 .top-video-list{
@@ -549,17 +580,15 @@ header{
     overflow: hidden;    
 }
 .btnVideo a,.title-cat{
-   
-    height: 100px;
-     background-color: #76fa82;
+    background-color: #76fa82;
     color: #333333;
-    font-size: 30px;
-    line-height: 100px;
+    font-size: 30px;    
     text-align: center;
     font-weight: bold;
     display: block;
     float: left;
     border-radius: 5px 5px 0 0;
+    padding:20px 0;
 }
 .title-cat{
     width: 80%;
@@ -638,12 +667,13 @@ header{
     background-color: #fff;
     vertical-align: middle;
     line-height: 490px;
+    overflow: hidden;
 }
 .sp-image a{
     display: block;
 }
 .sp-image img{
-    max-width:100%;
+    width:100%;
     
 
 }
@@ -876,6 +906,7 @@ header{
     text-align: center;
     line-height: 155px;
     float: left;
+    overflow: hidden;
 
 }
 .image-sp-cart img{
@@ -960,6 +991,10 @@ header{
 .right-bottomCart{
     width: 45%;
     float: left;
+}
+.btnDatHang{
+    background:none;
+    border:none;
 }
 /*CSS HOAN TAT DON HANG*/
 .page-thanh-toan .title-page{
@@ -1535,5 +1570,5 @@ footer{
     display:none; 
 }
 a:hover{
-    color:#1818ca;
+    color:#428bca;
 }

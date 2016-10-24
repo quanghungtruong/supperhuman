@@ -23,8 +23,7 @@ function setup_theme_hung()
 add_action('after_setup_theme','setup_theme_hung');
 
 function  add_style_js()
-{
-    
+{    
     wp_enqueue_style('bootstrapmin-css',  get_template_directory_uri().'/bootstrap/css/bootstrap.css','',true);
     wp_enqueue_style('template-css',  get_template_directory_uri().'/css/style.css','',true);
     wp_enqueue_style('camera-css',  get_template_directory_uri().'/css/template.css','',true);
@@ -66,6 +65,30 @@ function get_first_image($post_id) {
     ob_end_clean();
     $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
     return $matches[1][0];
+}
+if (is_admin()) {
+    add_action('wp_ajax_nopriv_do-ajax-jobs', 'handleAjax');
+    add_action('wp_ajax_do-ajax-jobs', 'handleAjax');
+}
+function initAjaxValues() {  
+    wp_enqueue_script('do-ajax-jobs', get_template_directory_uri() . '/js/ajax.js', array('jquery'), null, true);
+    wp_localize_script('do-ajax-jobs', 'LoadAjax', array(
+        'ajaxurl' => admin_url('admin-ajax.php'),
+        'site_url' => site_url(),
+        'theme_url' => get_bloginfo('stylesheet_directory')        
+    ));
+}
+add_action('wp_enqueue_scripts', 'initAjaxValues');
+
+function handleAjax() {
+    switch ($_REQUEST['event']) {
+        case "addcart":
+                $product_id = $_REQUEST['product_id'];
+                $cart = handleAddCart($product_id);
+                echo $cart;
+            break;
+    }
+    exit;
 }
 /*========================================================================*/
 /*
@@ -120,3 +143,34 @@ function getPostByCategory($num, $post_type, $cat, $orderby = 'date', $order = '
     $query = new WP_Query($args);
     return $query;
 }
+
+/*
+ * Handle add product into cart 
+ * 
+ **/
+function startSession()
+{
+    if(!session_id()) {
+        session_start();
+    }
+}
+add_action('init', 'startSession');
+
+function handleAddCart($pro_id){    
+    if($pro_id && !isset($_SESSION['superhuman_cart'])) {
+        $cart = array($pro_id);
+        $_SESSION['superhuman_cart'] = json_encode($cart);
+    } else {
+        $cart = json_decode($_SESSION['superhuman_cart']);
+        if($pro_id && !in_array($pro_id, $cart)) {
+            $cart[] = $pro_id;
+            $_SESSION['superhuman_cart'] = json_encode($cart);
+        } else {
+            return 'done';
+        }
+    }   
+    return count(json_decode($_SESSION['superhuman_cart']));
+}
+
+
+

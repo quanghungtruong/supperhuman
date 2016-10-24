@@ -39,14 +39,23 @@
                     </div>
                     <ul class="right-menu">
                         <li class="login">
-                            <a href="">
+                            <a href="<?php echo home_url('/dang-nhap/')?>">
                                 <img src="<?php bloginfo('stylesheet_directory')?>/images/icon_user.png">
                             </a>    
                         </li>
                         <li class="cart-number">
                             <div class="cart">
                                 <img src="<?php bloginfo('stylesheet_directory')?>/images/icon_cart.png">
-                                 <div class="c-number">0</div>
+                                <div class="c-number">
+                                    <?php
+                                        $product_num = $_SESSION['superhuman_cart'];
+                                        if(!empty($product_num)) {
+                                            echo count(json_decode($product_num));
+                                        } else {
+                                            echo 0;
+                                        }
+                                    ?>
+                                </div>
                             </div>                           
                         </li>
                     </ul>

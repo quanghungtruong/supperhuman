@@ -1,6 +1,8 @@
 <?php get_header() ?>
 <div class="page-thanh-toan">
-	
+	<?php
+            $cart = $_POST['cart'];
+        ?>
 	<form method="post" action="" id="PayForm">
 		<div class="content input-form">
 			<div class="title-page">Thông tin người nhận</div>
@@ -73,29 +75,42 @@
 		<div class="content cart-info-box">
 			<div class="title-page">Thông tin đơn hàng</div>
 			<div class="title-cart">
-				<div class="col-1">Sản phẩm (1)</div>
+				<div class="col-1">Sản phẩm (<?php echo count($cart);?>)</div>
 				<div class="col-2">Số lượng</div>
 				<div class="col-3">Giá</div>
 			</div>
-			<div class="cart-info">
-				<div class="col-1">Bìa tính khung siêu cứng</div>
-				<div class="col-2">2</div>
-				<div class="col-3">30.000 VNĐ</div>
+                        <?php                            
+                            if(!empty($cart)):
+                                foreach ($cart as $key=>$item):
+                                    $pro_id = str_replace('sp_', '', $key);
+                                    $getProduct = get_post($pro_id);
+                                    $image = get_post_meta($pro_id, 'hinh_1', true);
+                                    $title = get_the_title($pro_id);
+                                    $price = get_post_meta($pro_id, 'gia', true);
+                                    $sumPrice += $item*$price;
+                                    ?>
+                        <div class="cart-info">
+				<div class="col-1"><?php echo $title;?></div>
+				<div class="col-2"><?php echo $item;?></div>
+                                <div class="col-3"><?php echo number_format($item*$price, 0, '.', '.');?> VNĐ</div>
 			</div>
+                        <?php
+                                endforeach;
+                            endif;
+                        ?>
+			
 		</div>
 		<div class="content">
 			<div class="btnLocation">
 				<div class="main-btn-cart">
 					<div class="top-btn">
 						<span class="left-btn">Tổng cộng : </span>
-						<span class="right-btn">370 000 VNĐ</span>
+						<span class="right-btn"><?php echo number_format($sumPrice, 0, '.', '.');?> VNĐ</span>
 					</div>
 					<div class="bottom-btn">
 						<button type="submit">
 							<img src="<?php bloginfo('stylesheet_directory')?>/images/btnShip.png"/>
 						</button>
-							
-						
 					</div>
 				</div>
 			</div>
